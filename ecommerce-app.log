@@ -1,0 +1,92 @@
+2026-06-24T00:00:35.158+05:30  INFO 15316 --- [Ecommerce_Application_System] [RMI TCP Connection(95)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-06-24T00:00:36.540+05:30  INFO 15316 --- [Ecommerce_Application_System] [RMI TCP Connection(95)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-24T00:00:37.998+05:30  INFO 15316 --- [Ecommerce_Application_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-24T00:00:38.534+05:30  INFO 15316 --- [Ecommerce_Application_System] [RMI TCP Connection(95)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-24T00:00:39.053+05:30  INFO 15316 --- [Ecommerce_Application_System] [RMI TCP Connection(95)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-24T00:00:39.142+05:30  INFO 15316 --- [Ecommerce_Application_System] [RMI TCP Connection(95)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-24T07:58:28.070+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] .e.EcommerceApplicationSystemApplication : Starting EcommerceApplicationSystemApplication using Java 17.0.12 with PID 24116 (C:\Stackly_WorkSpace\Ecommerce_Application_System\target\classes started by devan in C:\Stackly_WorkSpace\Ecommerce_Application_System)
+2026-06-24T07:58:28.076+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] .e.EcommerceApplicationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2026-06-24T07:58:30.548+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-24T07:58:30.686+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 7 JPA repository interfaces.
+2026-06-24T07:58:31.602+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-06-24T07:58:31.638+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-24T07:58:31.639+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-06-24T07:58:31.878+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-24T07:58:31.879+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3699 ms
+2026-06-24T07:58:32.382+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-24T07:58:32.583+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-06-24T07:58:32.663+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-24T07:58:33.796+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-24T07:58:33.854+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-24T07:58:34.171+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:inventorydb user=ECOMMERCE
+2026-06-24T07:58:34.173+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-24T07:58:34.234+05:30  WARN 24116 --- [Ecommerce_Application_System] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-24T07:58:34.329+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-24T07:58:40.124+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-24T07:58:40.554+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-24T07:58:42.482+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-24T07:58:45.235+05:30  WARN 24116 --- [Ecommerce_Application_System] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24T07:58:47.438+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:inventorydb'
+2026-06-24T07:58:47.918+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2026-06-24T07:58:47.964+05:30  INFO 24116 --- [Ecommerce_Application_System] [main] .e.EcommerceApplicationSystemApplication : Started EcommerceApplicationSystemApplication in 20.924 seconds (process running for 22.348)
+2026-06-24T07:59:31.644+05:30  INFO 24116 --- [Ecommerce_Application_System] [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24T07:59:31.682+05:30  INFO 24116 --- [Ecommerce_Application_System] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-24T07:59:31.814+05:30  INFO 24116 --- [Ecommerce_Application_System] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 126 ms
+2026-06-24T07:59:32.881+05:30  INFO 24116 --- [Ecommerce_Application_System] [http-nio-8081-exec-2] c.ecommerce.controller.UserController    : Creating user with email=john.doe@example.com
+2026-06-24T07:59:34.505+05:30  INFO 24116 --- [Ecommerce_Application_System] [http-nio-8081-exec-2] c.ecommerce.controller.UserController    : User created successfully with id=1
+2026-06-24T07:59:43.753+05:30  INFO 24116 --- [Ecommerce_Application_System] [http-nio-8081-exec-4] c.ecommerce.controller.UserController    : Fetching user with id=1
+2026-06-24T08:00:05.087+05:30  INFO 24116 --- [Ecommerce_Application_System] [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-06-24T08:00:05.103+05:30  INFO 24116 --- [Ecommerce_Application_System] [RMI TCP Connection(5)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-24T08:00:05.303+05:30  INFO 24116 --- [Ecommerce_Application_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-24T08:00:05.334+05:30  INFO 24116 --- [Ecommerce_Application_System] [RMI TCP Connection(5)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-24T08:00:05.380+05:30  INFO 24116 --- [Ecommerce_Application_System] [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-24T08:00:05.394+05:30  INFO 24116 --- [Ecommerce_Application_System] [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-24T08:13:05.940+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] .e.EcommerceApplicationSystemApplication : Starting EcommerceApplicationSystemApplication using Java 17.0.12 with PID 25720 (C:\Stackly_WorkSpace\Ecommerce_Application_System\target\classes started by devan in C:\Stackly_WorkSpace\Ecommerce_Application_System)
+2026-06-24T08:13:05.943+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] .e.EcommerceApplicationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2026-06-24T08:13:07.477+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-24T08:13:07.595+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 7 JPA repository interfaces.
+2026-06-24T08:13:08.939+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-06-24T08:13:08.955+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-24T08:13:08.956+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-06-24T08:13:09.017+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-24T08:13:09.018+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3014 ms
+2026-06-24T08:13:09.208+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-24T08:13:09.297+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-06-24T08:13:09.342+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-24T08:13:09.760+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-24T08:13:09.800+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-24T08:13:10.012+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:inventorydb user=ECOMMERCE
+2026-06-24T08:13:10.014+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-24T08:13:10.050+05:30  WARN 25720 --- [Ecommerce_Application_System] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-24T08:13:10.074+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-24T08:13:11.472+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-24T08:13:11.575+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-24T08:13:11.963+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-24T08:13:12.867+05:30  WARN 25720 --- [Ecommerce_Application_System] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24T08:13:13.274+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:inventorydb'
+2026-06-24T08:13:13.379+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2026-06-24T08:13:13.388+05:30  INFO 25720 --- [Ecommerce_Application_System] [main] .e.EcommerceApplicationSystemApplication : Started EcommerceApplicationSystemApplication in 8.222 seconds (process running for 9.465)
+2026-06-24T08:13:37.790+05:30  INFO 25720 --- [Ecommerce_Application_System] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24T08:13:37.790+05:30  INFO 25720 --- [Ecommerce_Application_System] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-24T08:13:37.797+05:30  INFO 25720 --- [Ecommerce_Application_System] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-06-24T08:13:38.995+05:30  INFO 25720 --- [Ecommerce_Application_System] [http-nio-8081-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 651 ms
+2026-06-24T08:16:29.281+05:30  INFO 25720 --- [Ecommerce_Application_System] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-06-24T08:16:29.348+05:30  INFO 25720 --- [Ecommerce_Application_System] [RMI TCP Connection(7)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-24T08:16:29.514+05:30  INFO 25720 --- [Ecommerce_Application_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-24T08:16:29.547+05:30  INFO 25720 --- [Ecommerce_Application_System] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-24T08:16:29.593+05:30  INFO 25720 --- [Ecommerce_Application_System] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-24T08:16:29.601+05:30  INFO 25720 --- [Ecommerce_Application_System] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
