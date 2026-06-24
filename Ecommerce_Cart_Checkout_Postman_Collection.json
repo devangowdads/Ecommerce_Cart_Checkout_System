@@ -1,0 +1,299 @@
+{
+  "info": {
+    "name": "E-Commerce Cart & Checkout Module",
+    "description": "Sample API collection covering cart operations, coupons, checkout, payment simulation, and order history for the Cart & Checkout Spring Boot module.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080/api" },
+    { "key": "userId", "value": "1" },
+    { "key": "productId", "value": "1" },
+    { "key": "productId2", "value": "2" },
+    { "key": "orderId", "value": "1" },
+    { "key": "couponCode", "value": "SAVE10" }
+  ],
+  "item": [
+    {
+      "name": "Setup",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": { "raw": "{{baseUrl}}/users", "host": [ "{{baseUrl}}" ], "path": [ "users" ] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": { "raw": "{{baseUrl}}/products", "host": [ "{{baseUrl}}" ], "path": [ "products" ] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Wireless Mouse\",\n  \"price\": 25.99,\n  \"stockQuantity\": 100\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/products", "host": [ "{{baseUrl}}" ], "path": [ "products" ] }
+          }
+        },
+        {
+          "name": "Create Coupon",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": { "raw": "{{baseUrl}}/coupons", "host": [ "{{baseUrl}}" ], "path": [ "coupons" ] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"SAVE10\",\n  \"discountType\": \"PERCENTAGE\",\n  \"discountValue\": 10,\n  \"expiryDate\": \"2026-12-31\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Add Product to Cart",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/cart/{{userId}}/items",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "cart", "{{userId}}", "items" ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": {{productId}},\n  \"quantity\": 2\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Cart Item Quantity",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/cart/{{userId}}/items/{{productId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "cart", "{{userId}}", "items", "{{productId}}" ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": 5\n}"
+            }
+          }
+        },
+        {
+          "name": "Remove Product from Cart",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/cart/{{userId}}/items/{{productId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "cart", "{{userId}}", "items", "{{productId}}" ]
+            }
+          }
+        },
+        {
+          "name": "View Cart (with total)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cart/{{userId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "cart", "{{userId}}" ]
+            }
+          }
+        },
+        {
+          "name": "Apply Coupon to Cart",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/cart/{{userId}}/apply-coupon",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "cart", "{{userId}}", "apply-coupon" ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"couponCode\": \"{{couponCode}}\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Checkout",
+      "item": [
+        {
+          "name": "Checkout Cart (Success Scenario)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/checkout/{{userId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "checkout", "{{userId}}" ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentMode\": \"CARD\",\n  \"simulatePaymentResult\": \"SUCCESS\"\n}"
+            },
+            "description": "Validates stock, creates order, simulates payment, reduces inventory on SUCCESS, returns order summary with order ID."
+          }
+        },
+        {
+          "name": "Checkout Cart (Failure Scenario - Inventory Restored)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/checkout/{{userId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "checkout", "{{userId}}" ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentMode\": \"CARD\",\n  \"simulatePaymentResult\": \"FAILED\"\n}"
+            },
+            "description": "Simulates a FAILED payment. Inventory that was tentatively reduced should be restored, and order status marked FAILED."
+          }
+        },
+        {
+          "name": "Checkout Cart (Insufficient Stock - Negative Test)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/checkout/{{userId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "checkout", "{{userId}}" ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentMode\": \"CARD\",\n  \"simulatePaymentResult\": \"SUCCESS\"\n}"
+            },
+            "description": "Use this after manually setting cart quantity higher than available stock to verify stock validation returns a 4xx error before payment is attempted."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get Order Summary by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/orders/{{orderId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "orders", "{{orderId}}" ]
+            }
+          }
+        },
+        {
+          "name": "Get Order History by User ID (Paginated)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/orders/user/{{userId}}?page=0&size=10",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "orders", "user", "{{userId}}" ],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "10" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Negative / Edge Cases",
+      "item": [
+        {
+          "name": "Add Product with Invalid Quantity",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/cart/{{userId}}/items",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "cart", "{{userId}}", "items" ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": {{productId}},\n  \"quantity\": -1\n}"
+            },
+            "description": "Expect 400 Bad Request due to validation failure."
+          }
+        },
+        {
+          "name": "Apply Expired Coupon",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/cart/{{userId}}/apply-coupon",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "cart", "{{userId}}", "apply-coupon" ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"couponCode\": \"EXPIREDCODE\"\n}"
+            },
+            "description": "Expect 400/410 indicating coupon expired or invalid."
+          }
+        },
+        {
+          "name": "Checkout with Empty Cart",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/checkout/{{userId}}",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "checkout", "{{userId}}" ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentMode\": \"CARD\",\n  \"simulatePaymentResult\": \"SUCCESS\"\n}"
+            },
+            "description": "Expect 400 Bad Request — cannot checkout an empty cart."
+          }
+        },
+        {
+          "name": "Get Order History - Non-existent User",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/orders/user/9999?page=0&size=10",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "orders", "user", "9999" ],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "10" }
+              ]
+            },
+            "description": "Expect 404 Not Found."
+          }
+        }
+      ]
+    }
+  ]
+}
